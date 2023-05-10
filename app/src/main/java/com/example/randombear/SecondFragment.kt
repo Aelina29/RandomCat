@@ -1,7 +1,5 @@
 package com.example.randombear
 
-//import android.R
-//import android.os.Build.VERSION_CODES.R
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.os.Environment
@@ -21,6 +19,7 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.example.randombear.FirstFragment.Companion.key_cat
+import com.example.randombear.FirstFragment.Companion.key_fact
 import com.example.randombear.databinding.FragmentSecondBinding
 import java.io.File
 import java.io.FileOutputStream
@@ -58,6 +57,10 @@ class SecondFragment : Fragment() {
         Log.i("kpop", url)
 
         setImage(url)
+
+        var random_fact = arguments?.getString(key_fact) ?: "fffacts"
+        Log.i("kpopp2", random_fact)
+        binding.tvCat.text = random_fact
 
         setListener()
 
